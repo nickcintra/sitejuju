@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu.css">
+</head>
+
+<body>
+    <div class="logo">
+        <img src="../images/logo.png" alt="Logo">
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Portfolio</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Foto</a></li>
+                    <li><a href="#">Vídeo</a></li>
+                    <li><a href="#">Design</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Sobre</a></li>
+        </ul>
+    </div>
+    <div class="content">    
+        <div class="circle">
+            <div class="text">
+                <p> photo - video - design - photo - video - design -</p>
+                <!-- <p>video -</p>
+                <p>design -</p> -->
+            </div>
+        </div>
+    </div>
+    <!-- <div class="imagebackgroundjp">
+        <img src="../images/logo.png" alt="background">
+    </div> -->
+    <script>
+        const text = document.querySelector('.text p')
+        text.innerHTML = text.innerText.split('').map(
+            (char, i) =>
+                `<span style="transform:rotate(${i * 7.3}deg)">${char}</span>`
+        ).join('');
+    </script>
+</body>
+
+</html>

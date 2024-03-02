@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+
+body {
+    background-position: bottom -450px right -276px;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 20% 5% 75%;
+    min-height: 100vh;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+}
+
+.circle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: anim 10s linear infinite;
+    letter-spacing: -11px;
+}
+
+@keyframes anim {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.text span {
+    position: absolute;
+    left: 50%;
+    font-size: 1.2em;
+    transform-origin: 0 150px;
+}
+
+.content {
+    position: absolute;
+    left: -100px;
+    z-index: 1000;
+    top: -25px;
+}
+
+.imagebackgroundjp{
+    position: absolute;
+    right: -158px;
+    z-index: 1000;
+    bottom: -831px;
+}
