@@ -6,13 +6,14 @@
 }
 
 body {
-    background-position: bottom -450px right -276px;
     display: grid;
     place-items: center;
     grid-template-rows: 20% 5% 75%;
     min-height: 100vh;
     background-image: url(../images/logo.png);
     background-repeat: no-repeat;
+    background-position: bottom -450px right -276px;
+
 }
 
 .circle {
@@ -49,7 +50,7 @@ body {
     transform-origin: 0 150px;
 }
 
-.content {
+.conteudoCirculo {
     position: absolute;
     left: -100px;
     z-index: 1000;
@@ -61,4 +62,17 @@ body {
     right: -158px;
     z-index: 1000;
     bottom: -831px;
+}
+
+.conteudoFotos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza as divs horizontalmente */
+    gap: 20px; /* Espaçamento entre as divs */
+    text-align: center;
+}
+
+.conteudoFotos div {
+    flex: 1 300px; /* Faz com que as divs ocupem o mesmo espaço disponível e tenham uma largura mínima de 300px */
+    min-width: calc(33.33% - 20px);
 }
