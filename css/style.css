@@ -8,12 +8,12 @@
 body {
     display: grid;
     place-items: center;
-    grid-template-rows: 20% 5% 75%;
+    grid-template-rows: 25% 75%;
     min-height: 100vh;
+    min-width: 100vh;
     background-image: url(../images/logo.png);
     background-repeat: no-repeat;
     background-position: bottom -450px right -276px;
-
 }
 
 .circle {
@@ -38,6 +38,7 @@ body {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -57,7 +58,7 @@ body {
     top: -25px;
 }
 
-.imagebackgroundjp{
+.imagebackgroundjp {
     position: absolute;
     right: -158px;
     z-index: 1000;
@@ -67,12 +68,31 @@ body {
 .conteudoFotos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centraliza as divs horizontalmente */
-    gap: 20px; /* Espaçamento entre as divs */
-    text-align: center;
+    justify-content: center;
 }
 
-.conteudoFotos div {
-    flex: 1 300px; /* Faz com que as divs ocupem o mesmo espaço disponível e tenham uma largura mínima de 300px */
-    min-width: calc(33.33% - 20px);
+.foto {
+    flex: 0 0 calc(33.33% - 20px);
+    /* Definindo o tamanho das fotos */
+    margin: 10px;
+    /* Espaçamento entre as fotos */
+}
+
+.foto img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .foto {
+        flex-basis: calc(50% - 20px);
+        /* Duas fotos por linha em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .foto {
+        flex-basis: calc(100% - 20px);
+        /* Uma foto por linha em telas ainda menores */
+    }
 }
