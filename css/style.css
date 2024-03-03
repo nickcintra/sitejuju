@@ -51,7 +51,7 @@ body {
     transform-origin: 0 150px;
 }
 
-.conteudoCirculo {
+body:not(.homePage) .conteudoCirculo {
     position: absolute;
     left: -100px;
     z-index: 1000;
