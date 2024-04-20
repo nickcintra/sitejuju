@@ -26,15 +26,15 @@ body {
     align-items: center;
 }
 
-.text {
+.texto {
     width: 100%;
     height: 100%;
     position: absolute;
     animation: anim 10s linear infinite;
-    letter-spacing: -11px;
+    /* letter-spacing: -11px; */
 }
 
-.text span {
+.texto span {
     position: absolute;
     left: 50%;
     font-size: 1.7em;
@@ -50,7 +50,6 @@ body {
         transform: rotate(360deg);
     }
 }
-
 
 
 body:not(.homePage) .conteudoCirculo {
@@ -78,11 +77,33 @@ body:not(.homePage) .conteudoCirculo {
     /* Definindo o tamanho das fotos */
     margin: 10px;
     /* Espaçamento entre as fotos */
+    min-width: 462px;
 }
 
 .foto img {
     width: 100%;
     height: auto;
+}
+
+
+@media (max-width: 992px) {
+    .circle {
+        position: relative;
+        width: 330px;
+        height: 330px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+    .text span {
+        position: absolute;
+        left: 50%;
+        font-size: 1.5em;
+        transform-origin: 0 170px;
+    }
 }
 
 @media (max-width: 768px) {

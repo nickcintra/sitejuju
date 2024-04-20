@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/menu.css">
+    <script src="../javascript/circulo.js"></script>
 </head>
 
 <body class="homePage">
@@ -40,23 +41,17 @@
     <main class="content">
         <div class="conteudoCirculo">
             <div class="circle">
-                <div class="text">
-                    <p> photo - video - design - photo - video - design -</p>
-                    <!-- <p>video -</p>
-                    <p>design -</p> -->
+                <div class="texto">
+                    <p>photo -</p>
+                    <p>video -</p>
+                    <p>design -</p>
+                    <p>photo -</p>
+                    <p>video -</p>
+                    <p>design -</p>
                 </div>
             </div>
         </div>
     </main>
-
-
-    <script>
-        const text = document.querySelector('.text p')
-        text.innerHTML = text.innerText.split('').map(
-            (char, i) =>
-                `<span style="transform:rotate(${i * 7.3}deg)">${char}</span>`
-        ).join('');
-    </script>
 </body>
 
 </html>

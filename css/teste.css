@@ -1,0 +1,44 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 4000px;
+    background: white;
+}
+
+.circle {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.texto {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: anim 10s linear infinite;
+  /* letter-spacing: -11px; */
+}
+
+.texto span {
+  position: absolute;
+  left: 50%;
+  font-size: 1.7em;
+  transform-origin: 0 200px;
+}
+
+@keyframes anim {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+  

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/sobre.css">
+    <script src="../javascript/circulo.js"></script>
+
 </head>
 
 <body>
@@ -40,10 +42,13 @@
     <main class="content">
         <div class="conteudoCirculo">
             <div class="circle">
-                <div class="text">
-                    <p> photo - video - design - photo - video - design -</p>
-                    <!-- <p>video -</p>
-                    <p>design -</p> -->
+                <div class="texto">
+                    <p>photo - </p>
+                    <p>video - </p>
+                    <p>design -</p>
+                    <p>photo - </p>
+                    <p>video - </p>
+                    <p>design -</p>
                 </div>
             </div>
         </div>
@@ -72,16 +77,6 @@
             </div>
         </div>
     </main>
-
-
-    <script>
-        const text = document.querySelector('.text p')
-        text.innerHTML = text.innerText.split('').map(
-            (char, i) =>
-                `<span style="transform:rotate(${i * 8.0}deg)">${char}</span>`
-        ).join('');
-
-    </script>
 </body>
 
 </html>
