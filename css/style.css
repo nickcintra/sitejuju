@@ -6,14 +6,14 @@
 }
 
 body {
-    display: grid;
-    place-items: center;
-    grid-template-rows: 25% 75%;
-    min-height: 100vh;
-    min-width: 100vh;
     background-image: url(../images/logo.png);
     background-repeat: no-repeat;
     background-position: bottom -450px right -276px;
+}
+.conteudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .circle {
@@ -32,6 +32,7 @@ body {
     position: absolute;
     animation: anim 10s linear infinite;
     /* letter-spacing: -11px; */
+    z-index: 1;
 }
 
 .texto span {
@@ -41,7 +42,7 @@ body {
     transform-origin: 0 200px;
 }
 
-@keyframes anim {
+/* @keyframes anim {
     0% {
         transform: rotate(0deg);
     }
@@ -49,13 +50,13 @@ body {
     100% {
         transform: rotate(360deg);
     }
-}
+} */
 
 
 body:not(.homePage) .conteudoCirculo {
     position: absolute;
     left: -70px;
-    z-index: 1000;
+    z-index: -1;
     top: 25px;
 }
 
@@ -111,6 +112,10 @@ body:not(.homePage) .conteudoCirculo {
         flex-basis: calc(50% - 20px);
         /* Duas fotos por linha em telas menores */
     }
+
+    body {
+        background-position: bottom -862px right -312px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -118,4 +123,26 @@ body:not(.homePage) .conteudoCirculo {
         flex-basis: calc(100% - 20px);
         /* Uma foto por linha em telas ainda menores */
     }
+
+    body {
+        background-position: bottom -862px right -312px;
+    }
 }
+
+.spotted {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .spotted::before {
+    content: '';
+    display: block;
+    width: 150%;
+    height: 2px;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    top: 55%;
+    left: -30%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }

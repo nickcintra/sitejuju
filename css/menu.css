@@ -1,3 +1,10 @@
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .logo {
     text-align: center;
     padding: 30px 0px;
@@ -8,86 +15,98 @@
     height: auto;
 }
 
-.menu {
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
-    width: 100vh;
-}
 
-.menu ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.menu ul li {
-    display: inline-block;
-    margin: 0 20px;
-    position: relative;
-}
-
-.menu ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    padding: 5px 20px;
-    display: block;
-}
-
-.menu ul li a:hover {
-    font-weight: bold;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    overflow: hidden;
-    /* oculta qualquer conteúdo que ultrapasse a altura definida */
-    transition: opacity 0.3s ease, height 0.5s ease;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-    height: auto;
-    /* altura automática para expandir suavemente */
-}
-
-
-@media only screen and (max-width: 600px) {
-    .menu ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .menu ul li a {
-        display: inline-block;
-        padding: 10px;
-    }
-
-    .dropdown-menu {
-        position: static;
-        display: none;
-        padding: 0;
-        border: none;
-    }
-
-    .dropdown:hover .dropdown-menu {
-        display: none;
-    }
-}
-
-.redesociais{
+.redesociais {
     display: inline-flex;
     text-align: center;
     align-items: center;
     gap: 10px;
 }
 
-.redesociais img{
+.redesociais img {
     width: 2.3vh;
+}
+
+/* -------------- menu novo --------------*/
+nav {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    /* background-color: white; */
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #555;
+}
+
+nav .menu-btn i {
+    color: black;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 920px) {
+    nav {
+        justify-content: end;
+    }
+
+    nav .menu-btn i {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 201px;
+        left: -100%;
+        background-color: white;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: all 0.3s ease;
+        z-index: 2;
+    }
+
+    nav ul.open {
+        left: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 50px 0;
+    }
+
+    nav ul li a {
+        font-size: 23px;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+        background: #555;
+    }
 }

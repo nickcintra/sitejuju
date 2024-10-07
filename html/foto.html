@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Sobre</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/menu.css">
     <script src="../javascript/circulo.js"></script>
-
+    <script src="../javascript/menu.js"></script>
 </head>
 
 <body>
@@ -16,29 +17,19 @@
         <div class="logo">
             <img src="../images/logo.png" alt="Logo">
         </div>
-        <div class="menu">
-            <div>
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#">Portfolio</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="./foto.html">Foto</a></li>
-                            <li><a href="./video.html">Vídeo</a></li>
-                            <li><a href="./design.html">Design</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="./Sobre.html">Sobre</a></li>
-                </ul>
+        <nav>
+            <div class="menu-btn">
+                <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
             </div>
-            <div class="redesociais">
-                <div><img src="../images/instagram.png" alt="instagram"></div>
-                <div><img src="../images/whatsapp.png" alt="whatsapp"></div>
-                <div><img src="../images/o-email.png" alt="o-email"></div>
-            </div>
-        </div>
+    
+            <ul>
+                <li> <a href="#"> Home </a> </li>
+                <li> <a href="#"> Portfolio</a> </li>
+                <li> <a href="#"> Sobre</a> </li>
+            </ul>
+        </nav>
     </header>
-    <main class="content">
+    <main class="conteudo">
         <div class="conteudoCirculo">
             <div class="circle">
                 <div class="texto">
