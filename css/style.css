@@ -9,6 +9,10 @@
     height: 100px;
 }
 
+.topo {
+    padding: 15px;
+}
+
 body {
     background-image: url(../images/logo.png);
     background-repeat: no-repeat;
@@ -19,8 +23,7 @@ body {
 .conteudo{
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 0px 40px;
+    padding: 0px 1rem;
 }
 
 .circle {
@@ -49,7 +52,7 @@ body {
     transform-origin: 0 200px;
 }
 
-/* @keyframes anim {
+@keyframes anim {
     0% {
         transform: rotate(0deg);
     }
@@ -57,8 +60,12 @@ body {
     100% {
         transform: rotate(360deg);
     }
-} */
+}
 
+.conteudoCirculo  {
+    justify-self: center;
+    align-self: center;
+}
 
 body:not(.homePage) .conteudoCirculo {
     display: block;
@@ -75,24 +82,7 @@ body:not(.homePage) .conteudoCirculo {
     bottom: -831px;
 }
 
-.conteudoFotos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
-.foto {
-    flex: 0 0 calc(33.33% - 20px);
-    /* Definindo o tamanho das fotos */
-    margin: 10px;
-    /* Espaçamento entre as fotos */
-    min-width: 462px;
-}
-
-.foto img {
-    width: 100%;
-    height: auto;
-}
 
 
 @media (max-width: 992px) {
@@ -116,22 +106,17 @@ body:not(.homePage) .conteudoCirculo {
 }
 
 @media (max-width: 768px) {
-    .foto {
-        flex-basis: calc(50% - 20px);
-        /* Duas fotos por linha em telas menores */
-    }
-
     body {
         background-position: bottom -862px right -312px;
     }
 }
+@media (max-width: 592px) {
+    .conteudo{
+        padding: 0px 3rem;
+    }
+}
 
 @media (max-width: 480px) {
-    .foto {
-        flex-basis: calc(100% - 20px);
-        /* Uma foto por linha em telas ainda menores */
-    }
-
     body {
         background-position: bottom -862px right -312px;
     }
