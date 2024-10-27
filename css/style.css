@@ -5,15 +5,22 @@
     font-family: consolas;
 }
 
+.rodape {
+    height: 100px;
+}
+
 body {
     background-image: url(../images/logo.png);
     background-repeat: no-repeat;
-    background-position: bottom -450px right -276px;
+    background-position-x: 1100px;
+    background-position-y: 436px;
 }
+
 .conteudo{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0px 40px;
 }
 
 .circle {
@@ -54,6 +61,7 @@ body {
 
 
 body:not(.homePage) .conteudoCirculo {
+    display: block;
     position: absolute;
     left: -70px;
     z-index: -1;
