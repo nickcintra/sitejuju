@@ -4,11 +4,12 @@
     gap: 1rem;
     width: 100%;
     max-width: 1250px; 
-    margin: 0 auto; 
+    margin: 0 auto;
+    justify-items: center;
+
 }
 
 .foto {
-    width: 100%;
     max-width: 100%;
 }
 

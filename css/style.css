@@ -6,7 +6,8 @@
 }
 
 .rodape {
-    height: 100px;
+    height: 100px !important;
+    width: 100%;
 }
 
 .topo {
@@ -86,15 +87,6 @@ body:not(.homePage) .conteudoCirculo {
 
 
 @media (max-width: 992px) {
-    .circle {
-        position: relative;
-        width: 330px;
-        height: 330px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 
     
     .text span {
@@ -108,11 +100,6 @@ body:not(.homePage) .conteudoCirculo {
 @media (max-width: 768px) {
     body {
         background-position: bottom -862px right -312px;
-    }
-}
-@media (max-width: 592px) {
-    .conteudo{
-        padding: 0px 3rem;
     }
 }
 

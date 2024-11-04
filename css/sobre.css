@@ -1,38 +1,48 @@
-
+.img {
+    max-width: 100%;
+    display: block;
+}
 .conteudoSobre {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; 
     gap: 1rem;
-    max-width: 1250px;
-    margin-right: auto;
-    margin-left: auto;
+    max-width: 1050px; 
+    margin: 0 auto;
 }
 
 .imagemSobre {
-    justify-self: end;
-    align-content: center;
+    justify-self: center;
 }
 
 .imagemSobre img {
-    max-width: 500px;
-    height: 100%;
+    max-width: 100%;
+    height: auto;
     display: block;
+    justify-content: center;
 }
 
 .textoSobre{
     text-align: left;
     align-self: center;
     font-family: consolas;
-    font-size: 1rem ;
+    font-size: 1rem;
 }
 
 @media (max-width: 1149px){
     .conteudoSobre{
         grid-template-columns: 1fr;
+        padding: 10vh;
     }
+}
 
-    .imagemSobre {
-        justify-self: center;
-        align-content: center;
+@media (max-width: 750px){
+    .conteudoSobre{
+        padding: 7vh;
+    }
+}
+
+@media (max-width: 680px){
+    .conteudoSobre{
+        padding: 2vh;
     }
 }
