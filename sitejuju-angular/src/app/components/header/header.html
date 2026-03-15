@@ -10,13 +10,13 @@
   <ul [class.open]="menuOpen()">
     <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
     <li class="dropdown" [class.open]="dropdownOpen()">
-      <a (click)="toggleDropdown($event)" role="button" class="dropdown-trigger">
-        Portfolio <i class="fa fa-caret-down"></i>
-      </a>
+      <button type="button" class="dropdown-trigger" (click)="toggleDropdown()">
+        Portfolio
+      </button>
       <ul class="dropdown-menu">
-        <li><a routerLink="/portfolio/fotos" (click)="closeMenu()">Fotos</a></li>
-        <li><a routerLink="/portfolio/videos" (click)="closeMenu()">Vídeos</a></li>
-        <li><a routerLink="/portfolio/design" (click)="closeMenu()">Design</a></li>
+        <li><a routerLink="/portfolio/fotos">Fotos</a></li>
+        <li><a routerLink="/portfolio/videos">Vídeos</a></li>
+        <li><a routerLink="/portfolio/design">Design</a></li>
       </ul>
     </li>
     <li><a routerLink="/sobre">Sobre</a></li>
