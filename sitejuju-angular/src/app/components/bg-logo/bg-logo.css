@@ -8,7 +8,8 @@
   bottom: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: url('images/logo.png');
+  /* Caminho para public/images: bundler resolve e copia para o build (funciona em dev e GitHub Pages) */
+  background-image: url('../../../../public/images/logo.png');
   background-repeat: no-repeat;
 }
 
