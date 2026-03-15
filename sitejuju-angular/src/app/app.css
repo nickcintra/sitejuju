@@ -1,11 +1,8 @@
-/* Layout principal: fundo e conteúdo (Bootstrap para o resto) */
+/* Layout principal: wrapper sem background (logo decorativo é o app-bg-logo) */
 
 .app-wrapper {
+  position: relative;
   min-height: 100vh;
-  background-image: url('/images/logo.png');
-  background-repeat: no-repeat;
-  background-position-x: 1100px;
-  background-position-y: 436px;
 }
 
 .conteudo {
@@ -17,16 +14,4 @@
 .rodape {
   height: 100px;
   width: 100%;
-}
-
-@media (max-width: 768px) {
-  .app-wrapper {
-    background-position: bottom -862px right -312px;
-  }
-}
-
-@media (max-width: 480px) {
-  .app-wrapper {
-    background-position: bottom -862px right -312px;
-  }
 }

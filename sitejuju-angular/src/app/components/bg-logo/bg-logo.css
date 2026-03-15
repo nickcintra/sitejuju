@@ -1,0 +1,62 @@
+/* Logo decorativo: absoluto ao wrapper para escalar com a página ao redimensionar (sem distorcer) */
+
+.bg-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url('/images/logo.png');
+  background-repeat: no-repeat;
+}
+
+/* ---------- Home: web = canto inferior direito, só a ponta de cima (Figma) ---------- */
+.bg-logo--home {
+  /* Coloca o topo da imagem perto do fundo do container para só a ponta aparecer no canto */
+  background-position: 72vh 39vh;
+  background-size: 134vh auto;
+}
+
+@media (max-width: 991.98px) {
+  .bg-logo--home {
+    background-size: 110vh auto;
+    background-position: -7vh 62vh;
+  }
+}
+
+@media (max-width: 430px) {
+  .bg-logo--home {
+    background-size: 70vh auto;
+    background-position: -10vh 75vh;
+  }
+}
+
+/* ---------- Portfolio: mobile = igual home (só ponta); web = maior, sobe pela direita ---------- */
+.bg-logo--portfolio {
+  background-position: right bottom;
+  background-size: 280vw auto;
+}
+
+@media (min-width: 992px) {
+  .bg-logo--portfolio {
+    background-position: right bottom;
+    /* Web: mais visível, sobe pela direita */
+    background-size: 140vh auto;
+  }
+}
+
+/* ---------- Sobre: web = igual home (só ponta); mobile = mais atrás da foto do João ---------- */
+.bg-logo--sobre {
+  background-position: right bottom;
+  background-size: 220vh auto;
+}
+
+@media (max-width: 991.98px) {
+  .bg-logo--sobre {
+    /* Mobile: atrás do conteúdo, menor/mais contida para ficar atrás da foto */
+    background-position: left bottom;
+    background-size: 180vw auto;
+  }
+}

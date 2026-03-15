@@ -9,6 +9,10 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  /* Fixo no lugar: camada própria para não deslocar ao girar */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout;
 }
 
 .texto {
@@ -17,9 +21,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  transform-origin: center center;
+  transform-origin: 50% 50%;
   animation: anim 10s linear infinite;
   z-index: 1;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .texto span {
@@ -58,6 +64,15 @@
 }
 
 @media (max-width: 992px) {
+  .circle {
+    width: 340px;
+    height: 340px;
+  }
+
+  .texto {
+    transform-origin: 50% 50%;
+  }
+
   .texto span {
     font-size: 1.5em;
     transform-origin: 0 170px;

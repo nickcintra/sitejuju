@@ -30,21 +30,15 @@ export class CircleText {
 
   protected readonly activeWord = computed(() => CircleText.sectionToWord(this.activeSection()));
 
+  /* Palavras no círculo sem bolinhas/separadores entre elas (conforme Figma, sem os •) */
   private readonly segments: { text: string; wordId: WordId }[] = [
-    { text: 'photo\n', wordId: 'photo' },
-    { text: '-\n', wordId: null },
-    { text: 'video\n', wordId: 'video' },
-    { text: '-\n', wordId: null },
-    { text: 'design\n', wordId: 'design' },
-    { text: '-\n', wordId: null },
-    { text: 'photo\n', wordId: 'photo' },
-    { text: '-\n', wordId: null },
-    { text: 'video\n', wordId: 'video' },
-    { text: '-\n', wordId: null },
-    { text: 'design\n', wordId: 'design' },
-    { text: '-\n', wordId: null },
-    { text: 'photo\n', wordId: 'photo' },
-    { text: '-\n', wordId: null },
+    { text: 'photo ', wordId: 'photo' },
+    { text: 'video ', wordId: 'video' },
+    { text: 'design ', wordId: 'design' },
+    { text: 'photo ', wordId: 'photo' },
+    { text: 'video ', wordId: 'video' },
+    { text: 'design ', wordId: 'design' },
+    { text: 'photo ', wordId: 'photo' },
   ];
 
   private readonly baseChars: CharBase[] = this.buildBaseChars();
@@ -59,14 +53,16 @@ export class CircleText {
   });
 
   private buildBaseChars(): CharBase[] {
-    let textIndex = 0;
+    const totalChars = this.segments.reduce((acc, s) => acc + s.text.length, 0);
+    const step = totalChars > 0 ? 360 / totalChars : 0;
+    let index = 0;
     const result: CharBase[] = [];
     for (const { text, wordId } of this.segments) {
       for (const char of text.split('')) {
-        textIndex++;
+        index++;
         result.push({
           char,
-          rotation: textIndex * 6.3,
+          rotation: index * step,
           wordId,
         });
       }
