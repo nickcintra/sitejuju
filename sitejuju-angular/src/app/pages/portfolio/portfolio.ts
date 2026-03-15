@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { CircleText } from '../../components/circle-text/circle-text';
 import { PortfolioGrid } from '../../components/portfolio-grid/portfolio-grid';
 
+type PortfolioSection = 'fotos' | 'videos' | 'design';
+
 const PORTFOLIO_IMAGES: Record<string, string[]> = {
   fotos: ['images/foto01.svg', 'images/foto02.svg', 'images/foto03.svg'],
   videos: ['images/video01.svg', 'images/video2.svg', 'images/video03.svg'],
@@ -16,7 +18,7 @@ const PORTFOLIO_IMAGES: Record<string, string[]> = {
   styleUrl: './portfolio.css',
 })
 export class Portfolio {
-  private tipo = signal<string>('fotos');
+  protected tipo = signal<PortfolioSection>('fotos');
 
   protected images = computed(() => {
     const t = this.tipo();
@@ -26,7 +28,7 @@ export class Portfolio {
   constructor(private route: ActivatedRoute) {
     this.route.paramMap.subscribe(params => {
       const tipo = params.get('tipo') ?? 'fotos';
-      const valid = ['fotos', 'videos', 'design'].includes(tipo) ? tipo : 'fotos';
+      const valid: PortfolioSection = ['fotos', 'videos', 'design'].includes(tipo) ? (tipo as PortfolioSection) : 'fotos';
       this.tipo.set(valid);
     });
   }

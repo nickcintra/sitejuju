@@ -1,10 +1,17 @@
 <div class="circle">
   <div class="texto">
+    <!-- Uma linha contínua por palavra (só a palavra ativa é riscada) -->
+    @for (line of wordLines; track $index) {
+      @if (line.wordId === activeWord()) {
+        <div
+          class="word-strike"
+          [style.transform]="'rotate(' + line.centerRotation + 'deg)'"
+          aria-hidden="true"
+        ></div>
+      }
+    }
     @for (item of chars; track $index) {
-      <span
-        [class.spotted]="item.spotted"
-        [style.transform]="'rotate(' + item.rotation + 'deg)'"
-      >{{ item.char }}</span>
+      <span [style.transform]="'rotate(' + item.rotation + 'deg)'">{{ item.char }}</span>
     }
   </div>
 </div>

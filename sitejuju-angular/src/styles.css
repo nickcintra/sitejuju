@@ -62,6 +62,22 @@
   transform-origin: 0 200px;
 }
 
+/* Uma linha contínua por palavra (risca a palavra inteira) */
+.word-strike {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 220px;
+  height: 2px;
+  margin-left: -110px;
+  margin-top: -1px;
+  background: rgb(0, 0, 0);
+  transform-origin: center center;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.2s ease;
+}
+
 @keyframes anim {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -96,6 +112,7 @@
   left: -30%;
   transform: translateY(-50%);
   z-index: 1;
+  transition: opacity 0.25s ease;
 }
 
 @media (max-width: 992px) {
@@ -156,6 +173,10 @@ nav ul li {
   margin: 0 5px;
 }
 
+nav ul {
+  align-items: center;
+}
+
 nav ul li a {
   color: black;
   text-decoration: none;
@@ -165,6 +186,9 @@ nav ul li a {
   border-radius: 5px;
   letter-spacing: 1px;
   transition: all 0.3s ease;
+  display: inline-block;
+  line-height: 1.4;
+  box-sizing: border-box;
 }
 
 nav ul li a:hover,
@@ -191,7 +215,10 @@ nav .dropdown-trigger {
   border-radius: 5px;
   transition: all 0.3s ease;
   margin: 0;
-  line-height: inherit;
+  line-height: 1.4;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
 }
 
 nav .dropdown-trigger:hover {
@@ -239,12 +266,31 @@ nav .menu-btn i {
 }
 
 @media (max-width: 920px) {
+  /* Nav ocupa toda a largura para o hambúrguer poder ficar à direita */
+  header {
+    align-items: stretch;
+  }
+
+  header .logo {
+    align-self: center;
+  }
+
+  header nav {
+    width: 100%;
+    min-width: 100%;
+  }
+
   nav {
+    position: relative;
     justify-content: flex-end;
+    width: 100%;
   }
 
   nav .menu-btn {
-    position: relative;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 10;
     padding: 12px 16px;
     cursor: pointer;
@@ -287,6 +333,11 @@ nav .menu-btn i {
     font-size: 23px;
   }
 
+  /* No mobile: dropdown NÃO abre no hover, só no clique (.open) */
+  nav ul li.dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
   /* Dropdown no mobile: submenu abaixo do trigger, em fluxo normal */
   nav .dropdown-menu {
     position: static;
@@ -318,17 +369,24 @@ nav .menu-btn i {
 
   nav .dropdown-trigger {
     font-size: 23px;
-    width: 100%;
     min-height: 44px;
+    padding: 8px 15px;
     text-align: center;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     position: relative;
     z-index: 1;
+    /* Mesmo que os links: só ocupa o tamanho do texto + padding */
+    display: inline-block;
+    width: auto;
+  }
+
+  nav ul li.dropdown {
+    text-align: center;
   }
 }
 
-/* ========== Portfolio grid ========== */
+/* ========== Portfolio grid (Fotos, Vídeos, Design) ========== */
 .conteudoFotos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
@@ -337,16 +395,43 @@ nav .menu-btn i {
   max-width: 1250px;
   margin: 0 auto;
   justify-items: center;
+  padding: 0 1rem;
 }
 
 .foto {
   max-width: 100%;
+  width: 100%;
 }
 
 .foto img {
   max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
+}
+
+/* Responsivo: tablet — 2 colunas */
+@media (max-width: 768px) {
+  .conteudoFotos {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Responsivo: mobile — 1 coluna, padding maior */
+@media (max-width: 580px) {
+  .conteudoFotos {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1.25rem;
+    max-width: 100%;
+  }
+
+  .foto img {
+    border-radius: 4px;
+  }
 }
 
 /* ========== Sobre ========== */
