@@ -1,0 +1,129 @@
+/* NavMenu: só o que o Bootstrap não cobre (host, detalhes de cor, mobile overlay/seta) */
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.nav-link {
+  letter-spacing: 1px;
+  color: #212529 !important;
+  text-decoration: none !important;
+}
+
+.nav-link:hover {
+  color: #000 !important;
+}
+
+.navbar-nav .nav-link.active {
+  background-color: #555;
+  color: #fff !important;
+  border-radius: 5px;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.navbar-toggler-custom-icon {
+  color: rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+
+/* Esconder setinha do dropdown (Portfolio) em todas as resoluções */
+.nav-link.dropdown-toggle::after {
+  display: none;
+}
+
+/* Desktop: collapse não estica + dropdown desliza de cima e alinha ao Portfolio */
+@media (min-width: 992px) {
+  .navbar-collapse {
+    width: auto;
+  }
+
+  .nav-item.dropdown .dropdown-menu {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(-12px);
+  }
+
+  .dropdown-menu {
+    display: block !important;
+    opacity: 0;
+    transition: opacity 0.25s ease-out, transform 0.3s ease-out, visibility 0s linear 0.3s;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .dropdown-menu.show {
+    opacity: 1;
+    transition: opacity 0.25s ease-out, transform 0.3s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-item.dropdown .dropdown-menu.show {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Mobile: painel overlay + deslize da esquerda para a direita + seta do dropdown */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    width: 100%;
+    z-index: 1020;
+    background: #fff;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    display: block;
+    transition: transform 0.3s ease-out, visibility 0s linear 0.3s;
+    transform: translateX(-100%);
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .navbar-collapse.collapse.show {
+    transition: transform 0.3s ease-out, visibility 0s linear 0s;
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .navbar-nav .nav-link {
+    display: block;
+    width: 100%;
+  }
+
+  .navbar-nav .dropdown-menu {
+    position: static !important;
+    float: none !important;
+    display: block !important;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding-left: 0;
+    margin: 0;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(-8px);
+    opacity: 0;
+    transition: max-height 0.3s ease-out, transform 0.3s ease-out, opacity 0.2s ease-out;
+  }
+
+  .navbar-nav .dropdown-menu.show {
+    max-height: 200px;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .navbar-nav .dropdown-item {
+    justify-content: center;
+    text-align: center;
+  }
+}

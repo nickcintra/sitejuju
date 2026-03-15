@@ -1,26 +1,8 @@
-<header class="header">
-  <div class="logo">
-    <a routerLink="/">
-      <img src="images/logo.png" alt="Logo" />
+<nav class="navbar navbar-expand-lg navbar-light pt-5">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">
+      <img src="images/logo.png" alt="Logo" class="header-logo" />
     </a>
+    <app-nav-menu />
   </div>
-  <nav class="nav">
-  <div class="menu-btn" (click)="toggleMenu()" role="button" aria-label="Abrir menu">
-    <i class="fa fa-bars fa-2x"></i>
-  </div>
-  <ul [class.open]="menuOpen()">
-    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
-    <li class="dropdown" [class.open]="dropdownOpen()">
-      <button type="button" class="dropdown-trigger" (click)="toggleDropdown(); $event.stopPropagation()">
-        Portfolio
-      </button>
-      <ul class="dropdown-menu">
-        <li><a routerLink="/portfolio/fotos">Fotos</a></li>
-        <li><a routerLink="/portfolio/videos">Vídeos</a></li>
-        <li><a routerLink="/portfolio/design">Design</a></li>
-      </ul>
-    </li>
-    <li><a routerLink="/sobre">Sobre</a></li>
-  </ul>
-  </nav>
-</header>
+</nav>

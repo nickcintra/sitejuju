@@ -1,4 +1,4 @@
-/* ========== Layout da aplicação (shell) ========== */
+/* Layout principal: fundo e conteúdo (Bootstrap para o resto) */
 
 .app-wrapper {
   min-height: 100vh;

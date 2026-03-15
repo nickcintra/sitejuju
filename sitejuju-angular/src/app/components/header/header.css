@@ -1,257 +1,35 @@
-/* ========== Header / Menu (componente) ========== */
+/* Header: logo em cima, menu embaixo; ambos centralizados em todas as resoluções */
+
 :host {
   display: block;
 }
 
-.header {
+.navbar {
+  /* padding-top: 15px;
+  padding-bottom: 15px; */
+}
+
+/* Coluna: logo em cima, menu embaixo; tudo centralizado */
+.navbar .container-fluid {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 15px;
+  width: 100%;
 }
 
-.logo {
+.navbar-brand {
+  display: block;
+  padding: 15px 0;
   text-align: center;
-  padding: 30px 0;
 }
 
-.logo img {
+.header-logo {
   width: 75px;
   height: auto;
 }
 
-.nav {
-  display: flex;
-  height: 80px;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-.nav ul li {
-  margin: 0 5px;
-}
-
-.nav ul li a {
-  color: black;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 8px 15px;
-  border-radius: 5px;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  display: inline-block;
-  line-height: 1.4;
-  box-sizing: border-box;
-}
-
-.nav ul li a:hover,
-.nav ul li a.active {
-  background: #555;
-  color: white;
-}
-
-/* Dropdown Portfolio */
-.nav ul li.dropdown {
-  position: relative;
-}
-
-.dropdown-trigger {
-  cursor: pointer;
-  font: inherit;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: black;
-  background: none;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  margin: 0;
-  line-height: 1.4;
-  display: inline-block;
-  vertical-align: middle;
-  box-sizing: border-box;
-}
-
-.dropdown-trigger:hover {
-  background: #555;
-  color: white;
-}
-
-.dropdown-menu {
-  display: none !important; /* base: fechado; hover/.open sobrescrevem abaixo */
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 140px;
-  background: white;
-  list-style: none;
-  margin: 0;
-  padding: 8px 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
-  z-index: 20;
-  flex-direction: column;
-}
-
-.dropdown-menu li {
-  margin: 0;
-  width: 100%;
-}
-
-.dropdown-menu li a {
-  display: block;
-  padding: 10px 16px;
-  white-space: nowrap;
-  touch-action: manipulation;
-}
-
-.nav ul li.dropdown:hover .dropdown-menu,
-.nav ul li.dropdown.open .dropdown-menu {
-  display: flex !important;
-}
-
-.menu-btn {
-  display: none;
-}
-
-.menu-btn i {
-  color: black;
-  cursor: pointer;
-}
-
-/* ---------- Mobile (menu hambúrguer) ---------- */
-@media (max-width: 920px) {
-  .header {
-    align-items: stretch;
-  }
-
-  .logo {
-    align-self: center;
-  }
-
-  .nav {
+@media (max-width: 991.98px) {
+  .navbar {
     position: relative;
-    justify-content: flex-end;
-    width: 100%;
-    min-width: 100%;
-  }
-
-  .menu-btn {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    padding: 12px 16px;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    display: block;
-  }
-
-  .menu-btn i {
-    display: block;
-    pointer-events: none;
-  }
-
-  .nav ul {
-    position: fixed;
-    top: 201px;
-    left: -100%;
-    background-color: white;
-    height: calc(100vh - 201px);
-    max-height: calc(100vh - 201px);
-    width: 100%;
-    text-align: center;
-    display: block;
-    transition: left 0.3s ease;
-    z-index: 2;
-    pointer-events: none;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .nav ul.open {
-    left: 0 !important;
-    pointer-events: auto !important;
-  }
-
-  .nav ul li {
-    width: 100%;
-    margin: 50px 0;
-  }
-
-  .nav ul li a {
-    font-size: 23px;
-  }
-
-  .nav ul li.dropdown:hover .dropdown-menu {
-    display: none !important;
-  }
-
-  /* No mobile: submenu fechado por padrão */
-  .nav ul li.dropdown .dropdown-menu {
-    display: none !important;
-  }
-
-  /* No mobile: submenu aberto só quando .open no li */
-  .nav ul li.dropdown.open .dropdown-menu {
-    display: flex !important;
-    flex-direction: column;
-  }
-
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    background: transparent;
-    padding-left: 1rem;
-    margin-top: 4px;
-    z-index: auto;
-  }
-
-  .dropdown-menu li {
-    margin: 15px 0;
-  }
-
-  .dropdown-menu li a {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 16px;
-    font-size: 18px;
-    pointer-events: auto;
-  }
-
-  .dropdown-trigger {
-    font-size: 23px;
-    min-height: 44px;
-    padding: 8px 15px;
-    text-align: center;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-    width: auto;
-  }
-
-  .nav ul li.dropdown {
-    text-align: center;
   }
 }

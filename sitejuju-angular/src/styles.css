@@ -1,12 +1,4 @@
-/* ========== Estilos globais (apenas o essencial) ==========
-   Nada de componentes aqui. Cada componente tem seu próprio .css:
-   - app.css          → .app-wrapper, .conteudo, .rodape
-   - header.css       → .header, .nav, .logo, .dropdown-menu, .menu-btn
-   - circle-text.css  → .circle, .texto, .spotted
-   - portfolio-grid.css → .conteudoFotos, .foto
-   - sobre-content.css  → .conteudoSobre, .imagemSobre, .textoSobre
-   Aqui: só reset, tipografia e .conteudoCirculo (precisa ser global).
-*/
+/* Reset e base; Bootstrap já carregado antes no angular.json */
 
 *,
 *::before,
@@ -16,15 +8,12 @@
   box-sizing: border-box;
 }
 
-:root {
-  font-family: consolas, monospace;
-}
-
+:root,
 body {
   font-family: consolas, monospace;
 }
 
-/* Layout do círculo nas páginas (usa classe no router-outlet); precisa ser global */
+/* Layout do círculo nas páginas (global por causa do router-outlet) */
 .conteudoCirculo {
   justify-self: center;
   align-self: center;

@@ -1,0 +1,48 @@
+<div class="nav-menu-row d-flex align-items-center w-100 justify-content-end justify-content-lg-center py-4">
+  <button
+    class="navbar-toggler border-0 p-2"
+    type="button"
+    (click)="toggleMenu()"
+    [attr.aria-expanded]="menuOpen()"
+    aria-controls="navbarNav"
+    aria-label="Abrir menu"
+  >
+    <i class="fa fa-bars fa-2x navbar-toggler-custom-icon" aria-hidden="true"></i>
+  </button>
+  <div
+    id="navbarNav"
+    class="collapse navbar-collapse flex-grow-0"
+    [class.show]="menuOpen()"
+  >
+  <ul class="navbar-nav mb-2 mb-lg-0 justify-content-center flex-column flex-lg-row text-center w-100">
+    <li class="nav-item border-0">
+      <a
+        class="nav-link fw-medium px-3 py-2"
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+    </li>
+    <li class="nav-item dropdown border-0">
+      <a
+        class="nav-link dropdown-toggle fw-medium px-3 py-2"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        (click)="$event.preventDefault()"
+        >Portfolio</a
+      >
+      <ul class="dropdown-menu text-center">
+        <li><a class="dropdown-item py-2 px-3 text-dark text-decoration-none" routerLink="/portfolio/fotos">Fotos</a></li>
+        <li><a class="dropdown-item py-2 px-3 text-dark text-decoration-none" routerLink="/portfolio/videos">Vídeos</a></li>
+        <li><a class="dropdown-item py-2 px-3 text-dark text-decoration-none" routerLink="/portfolio/design">Design</a></li>
+      </ul>
+    </li>
+    <li class="nav-item border-0">
+      <a class="nav-link fw-medium px-3 py-2" routerLink="/sobre">Sobre</a>
+    </li>
+  </ul>
+  </div>
+</div>
