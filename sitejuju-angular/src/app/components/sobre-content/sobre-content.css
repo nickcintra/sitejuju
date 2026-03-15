@@ -1,0 +1,45 @@
+/* ========== Seção Sobre ========== */
+
+.conteudoSobre {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.imagemSobre {
+  justify-self: center;
+}
+
+.imagemSobre img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.textoSobre {
+  text-align: left;
+  align-self: center;
+  font-family: consolas, monospace;
+  font-size: 1rem;
+}
+
+@media (max-width: 1149px) {
+  .conteudoSobre {
+    grid-template-columns: 1fr;
+    padding: 10vh;
+  }
+}
+
+@media (max-width: 750px) {
+  .conteudoSobre {
+    padding: 7vh;
+  }
+}
+
+@media (max-width: 680px) {
+  .conteudoSobre {
+    padding: 2vh;
+  }
+}

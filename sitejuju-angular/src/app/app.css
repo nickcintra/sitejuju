@@ -1,0 +1,32 @@
+/* ========== Layout da aplicação (shell) ========== */
+
+.app-wrapper {
+  min-height: 100vh;
+  background-image: url('/images/logo.png');
+  background-repeat: no-repeat;
+  background-position-x: 1100px;
+  background-position-y: 436px;
+}
+
+.conteudo {
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.rodape {
+  height: 100px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .app-wrapper {
+    background-position: bottom -862px right -312px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-wrapper {
+    background-position: bottom -862px right -312px;
+  }
+}

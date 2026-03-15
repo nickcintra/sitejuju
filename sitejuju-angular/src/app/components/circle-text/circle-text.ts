@@ -9,11 +9,6 @@ interface CharBase {
   wordId: WordId;
 }
 
-interface WordLine {
-  wordId: 'photo' | 'video' | 'design';
-  centerRotation: number;
-}
-
 @Component({
   selector: 'app-circle-text',
   imports: [],
@@ -21,7 +16,6 @@ interface WordLine {
   styleUrl: './circle-text.css',
 })
 export class CircleText {
-  /** Seção ativa do menu: 'fotos' → risca "photo", 'videos' → "video", 'design' → "design". Null = nenhuma riscada. */
   activeSection = input<Section | null>(null);
 
   private static sectionToWord(section: Section | null): WordId {
@@ -53,11 +47,16 @@ export class CircleText {
     { text: '-\n', wordId: null },
   ];
 
-  /** Caracteres para exibir no círculo (sem risco por letra). */
-  protected readonly chars: CharBase[] = this.buildBaseChars();
+  private readonly baseChars: CharBase[] = this.buildBaseChars();
 
-  /** Uma linha contínua por ocorrência de palavra (photo, video, design) — risca a palavra inteira. */
-  protected readonly wordLines: WordLine[] = this.buildWordLines();
+  /** Letras com risco (.spotted) só na palavra ativa — jeito que funcionava. */
+  protected readonly chars = computed(() => {
+    const active = this.activeWord();
+    return this.baseChars.map((c) => ({
+      ...c,
+      spotted: c.wordId !== null && c.wordId === active,
+    }));
+  });
 
   private buildBaseChars(): CharBase[] {
     let textIndex = 0;
@@ -73,20 +72,5 @@ export class CircleText {
       }
     }
     return result;
-  }
-
-  private buildWordLines(): WordLine[] {
-    const lines: WordLine[] = [];
-    let textIndex = 0;
-    for (const { text, wordId } of this.segments) {
-      if (wordId !== null) {
-        const firstRotation = (textIndex + 1) * 6.3;
-        const lastRotation = (textIndex + text.length) * 6.3;
-        const centerRotation = (firstRotation + lastRotation) / 2;
-        lines.push({ wordId, centerRotation });
-      }
-      textIndex += text.length;
-    }
-    return lines;
   }
 }

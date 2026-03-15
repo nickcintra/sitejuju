@@ -1,16 +1,17 @@
-<div class="logo">
-  <a routerLink="/">
-    <img src="images/logo.png" alt="Logo" />
-  </a>
-</div>
-<nav>
+<header class="header">
+  <div class="logo">
+    <a routerLink="/">
+      <img src="images/logo.png" alt="Logo" />
+    </a>
+  </div>
+  <nav class="nav">
   <div class="menu-btn" (click)="toggleMenu()" role="button" aria-label="Abrir menu">
     <i class="fa fa-bars fa-2x"></i>
   </div>
   <ul [class.open]="menuOpen()">
     <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
     <li class="dropdown" [class.open]="dropdownOpen()">
-      <button type="button" class="dropdown-trigger" (click)="toggleDropdown()">
+      <button type="button" class="dropdown-trigger" (click)="toggleDropdown(); $event.stopPropagation()">
         Portfolio
       </button>
       <ul class="dropdown-menu">
@@ -21,4 +22,5 @@
     </li>
     <li><a routerLink="/sobre">Sobre</a></li>
   </ul>
-</nav>
+  </nav>
+</header>
