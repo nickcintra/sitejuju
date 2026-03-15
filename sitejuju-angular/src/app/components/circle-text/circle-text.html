@@ -1,10 +1,14 @@
 <div class="circle">
   <div class="texto">
+    @if (arcPaths().length > 0) {
+      <svg class="circle-arc" viewBox="0 0 400 400" aria-hidden="true">
+        @for (path of arcPaths(); track $index) {
+          <path [attr.d]="path" class="circle-arc-line" />
+        }
+      </svg>
+    }
     @for (item of chars(); track $index) {
-      <span
-        [class.spotted]="item.spotted"
-        [style.transform]="'rotate(' + item.rotation + 'deg)'"
-      >{{ item.char }}</span>
+      <span [style.transform]="'rotate(' + item.rotation + 'deg)'">{{ item.char }}</span>
     }
   </div>
 </div>

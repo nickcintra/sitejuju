@@ -26,9 +26,36 @@
   color: #212529;
 }
 
-.navbar-toggler-custom-icon {
-  color: rgba(0, 0, 0, 0.55);
+/* Hamburger: listrinhas mais finas e pretas; botão sem borda ao focar */
+.navbar-toggler {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Hamburger customizado: listrinhas finas, pretas e espaçadas */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
   pointer-events: none;
+}
+
+.hamburger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #000;
+  flex-shrink: 0;
 }
 
 /* Esconder setinha do dropdown (Portfolio) em todas as resoluções */
@@ -51,12 +78,14 @@
   .dropdown-menu {
     display: block !important;
     opacity: 0;
+    padding: 0 !important;
     transition: opacity 0.25s ease-out, transform 0.3s ease-out, visibility 0s linear 0.3s;
     visibility: hidden;
     pointer-events: none;
   }
 
   .dropdown-menu.show {
+    padding: 0.25rem 0 !important;
     opacity: 1;
     transition: opacity 0.25s ease-out, transform 0.3s ease-out, visibility 0s linear 0s;
     visibility: visible;
@@ -106,7 +135,7 @@
     box-shadow: none;
     border: none;
     border-radius: 0;
-    padding-left: 0;
+    padding: 0 !important;
     margin: 0;
     text-align: center;
     max-height: 0;
@@ -118,6 +147,7 @@
 
   .navbar-nav .dropdown-menu.show {
     max-height: 200px;
+    padding: 0.25rem 0 !important;
     transform: translateY(0);
     opacity: 1;
   }

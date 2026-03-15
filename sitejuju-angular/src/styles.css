@@ -23,6 +23,13 @@ body {
   display: block;
   position: absolute;
   left: -70px;
-  z-index: -1;
+  z-index: 1;
   top: 25px;
+}
+
+/* Mobile: círculo mais à esquerda (ajuste o valor para mais/menos) */
+@media (max-width: 991.98px) {
+  .app-wrapper:not(.homePage) .conteudoCirculo {
+    left: -170px;
+  }
 }
