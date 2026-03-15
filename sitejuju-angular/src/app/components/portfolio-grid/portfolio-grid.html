@@ -1,0 +1,7 @@
+<div class="conteudoFotos">
+  @for (img of images(); track img) {
+    <div class="foto">
+      <img [src]="img" [alt]="img" />
+    </div>
+  }
+</div>

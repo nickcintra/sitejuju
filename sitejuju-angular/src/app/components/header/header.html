@@ -1,0 +1,24 @@
+<div class="logo">
+  <a routerLink="/">
+    <img src="images/logo.png" alt="Logo" />
+  </a>
+</div>
+<nav>
+  <div class="menu-btn" (click)="toggleMenu()" role="button" aria-label="Abrir menu">
+    <i class="fa fa-bars fa-2x"></i>
+  </div>
+  <ul [class.open]="menuOpen()">
+    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+    <li class="dropdown" [class.open]="dropdownOpen()">
+      <a (click)="toggleDropdown($event)" role="button" class="dropdown-trigger">
+        Portfolio <i class="fa fa-caret-down"></i>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/portfolio/fotos" (click)="closeMenu()">Fotos</a></li>
+        <li><a routerLink="/portfolio/videos" (click)="closeMenu()">Vídeos</a></li>
+        <li><a routerLink="/portfolio/design" (click)="closeMenu()">Design</a></li>
+      </ul>
+    </li>
+    <li><a routerLink="/sobre">Sobre</a></li>
+  </ul>
+</nav>

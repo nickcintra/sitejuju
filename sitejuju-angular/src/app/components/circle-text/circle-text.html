@@ -1,0 +1,10 @@
+<div class="circle">
+  <div class="texto">
+    @for (item of chars; track $index) {
+      <span
+        [class.spotted]="item.spotted"
+        [style.transform]="'rotate(' + item.rotation + 'deg)'"
+      >{{ item.char }}</span>
+    }
+  </div>
+</div>
