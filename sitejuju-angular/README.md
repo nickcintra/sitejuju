@@ -4,6 +4,12 @@ Projeto migrado para **Angular 21** (versão atual). Inclui: Home com círculo a
 
 **Assets:** Coloque as imagens (logo.png, design01.svg, foto01.svg, video01.svg, sobre.svg, etc.) em `public/images/` para que apareçam no site.
 
+## Site no ar (GitHub Pages)
+
+O repositório está configurado para publicar o site no **GitHub Pages**. Depois de ativar nas configurações do repositório (veja o README na raiz do repo), o site fica disponível em:
+
+**https://nickcintra.github.io/sitejuju/**
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.2.
 
 ## Development server
