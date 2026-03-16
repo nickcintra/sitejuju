@@ -1,8 +1,16 @@
-<div class="app-wrapper" [class.homePage]="isHomePage" [class.portfolioPage]="isPortfolioPage" [class.sobrePage]="isSobrePage">
-  <app-bg-logo [page]="bgLogoPage" />
-  <app-header />
-  <main class="conteudo">
-    <router-outlet />
-  </main>
-  <footer class="rodape"></footer>
-</div>
+@if (isAdminRoute) {
+  <router-outlet />
+} @else {
+  <div class="app-wrapper" [class.homePage]="isHomePage" [class.portfolioPage]="isPortfolioPage" [class.sobrePage]="isSobrePage">
+    <app-bg-logo [page]="bgLogoPage" />
+    <app-header />
+    <main class="conteudo">
+      <router-outlet />
+    </main>
+    <footer class="rodape">
+      @if (adminUnlock.showAdminLink()) {
+        <a routerLink="/admin" class="rodape-admin rodape-admin-enter">Admin</a>
+      }
+    </footer>
+  </div>
+}

@@ -121,3 +121,8 @@ body.dark-mode .nav-menu-social-icon {
 body.dark-mode .rodape {
   background-color: #1a1a1a;
 }
+
+.nav-menu-logo {
+  width: 75px;
+  height: auto;
+}

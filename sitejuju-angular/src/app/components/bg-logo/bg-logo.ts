@@ -1,7 +1,7 @@
 import { Component, computed, input } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 
-export type BgLogoPage = 'home' | 'portfolio' | 'sobre';
+export type BgLogoPage = 'home' | 'portfolio' | 'sobre' | 'admin';
 
 /** Modo claro: logo preta. Modo escuro: logo branca (logo-white.png). */
 const LOGO_LIGHT = 'images/logo.png';

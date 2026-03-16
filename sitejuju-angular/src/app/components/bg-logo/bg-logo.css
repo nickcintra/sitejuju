@@ -37,6 +37,13 @@
   background-size: 134vh auto;
 }
 
+/* ---------- Admin: todas as telas (fotos, vídeos, design, sobre), centralizado ao fundo ---------- */
+.bg-logo--admin {
+  background-position: center center;
+  background-size: 80vh auto;
+  opacity: 0.50;
+}
+
 /* Ordem: do maior para o menor. Assim em tela pequena vence o media query mais estreito. */
 
 /* 1440px: portfolio alinhado ao grid (centralizado) */

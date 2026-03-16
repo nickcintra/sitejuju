@@ -1,0 +1,72 @@
+<div class="admin-layout-wrapper">
+  <div class="admin-bg-logo">
+    <app-bg-logo [page]="bgLogoPage" />
+  </div>
+
+  <div class="container-fluid min-vh-100 p-0 position-relative">
+    <!-- Mobile: logo + Admin em cima, hamburger abre dropdown de cima pra baixo; conteúdo acompanha -->
+    <div class="admin-mobile-top d-md-none bg-dark text-white p-3">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex flex-column align-items-center text-center flex-grow-1">
+          <a class="navbar-brand py-2" routerLink="/">
+            <img src="images/logowhite.png" alt="Logo" class="nav-menu-logo" style="max-width: 80px;" />
+          </a>
+          <h1 class="h6 mb-0 mt-1" style="font-size: 1rem; white-space: nowrap;">ADMININASTRÔ JUJU</h1>
+        </div>
+        <button
+          type="button"
+          class="admin-hamburger btn border-0 p-2 ms-2"
+          (click)="toggleMenu()"
+          [attr.aria-expanded]="menuOpen()"
+          aria-label="Abrir ou fechar menu"
+        >
+          <span class="admin-hamburger-icon" aria-hidden="true">
+            <span class="admin-hamburger-line"></span>
+            <span class="admin-hamburger-line"></span>
+            <span class="admin-hamburger-line"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="admin-mobile-dropdown d-md-none bg-dark text-white"
+      [class.open]="menuOpen()"
+    >
+      <nav class="nav flex-column gap-1 p-3 pt-0">
+        <a routerLink="/admin/fotos" routerLinkActive="active" class="nav-link text-white rounded" (click)="closeMenu()">Fotos</a>
+        <a routerLink="/admin/videos" routerLinkActive="active" class="nav-link text-white rounded" (click)="closeMenu()">Vídeos</a>
+        <a routerLink="/admin/design" routerLinkActive="active" class="nav-link text-white rounded" (click)="closeMenu()">Design</a>
+        <a routerLink="/admin/sobre" routerLinkActive="active" class="nav-link text-white rounded" (click)="closeMenu()">Sobre</a>
+      </nav>
+      <a routerLink="/" class="d-block px-3 pb-3 pt-1 text-secondary text-decoration-none small" (click)="closeMenu()">
+        <i class="bi bi-arrow-left"></i> Voltar ao site
+      </a>
+    </div>
+
+    <div class="row g-0 min-vh-100">
+      <!-- Desktop: sidebar com logo em cima, Admin, opções embaixo -->
+      <aside class="admin-sidebar d-none d-md-flex col-md-4 col-lg-3 col-xl-2 bg-dark text-white p-3 flex-column">
+        <div class="d-flex flex-column flex-xl-row justify-content-between align-items-center text-center">
+          <a class="navbar-brand py-3" routerLink="/">
+            <img src="images/logowhite.png" alt="Logo" class="nav-menu-logo" style="max-width: 100px;" />
+          </a>
+          <h1 class="h5 mb-4 mb-xl-0" style="font-size: 1.1rem; white-space: nowrap;">ADMININASTRÔ JUJU</h1>
+          <div class="d-none d-xl-block"></div>
+        </div>
+        <nav class="nav flex-column gap-1 mt-3">
+          <a routerLink="/admin/fotos" routerLinkActive="active" class="nav-link text-white rounded">Fotos</a>
+          <a routerLink="/admin/videos" routerLinkActive="active" class="nav-link text-white rounded">Vídeos</a>
+          <a routerLink="/admin/design" routerLinkActive="active" class="nav-link text-white rounded">Design</a>
+          <a routerLink="/admin/sobre" routerLinkActive="active" class="nav-link text-white rounded">Sobre</a>
+        </nav>
+        <a routerLink="/" class="mt-auto pt-3 text-secondary text-decoration-none small">
+          <i class="bi bi-arrow-left"></i> Voltar ao site
+        </a>
+      </aside>
+
+      <main class="col-12 col-md-8 col-lg-9 col-xl-10 p-4 admin-main">
+        <router-outlet />
+      </main>
+    </div>
+  </div>
+</div>

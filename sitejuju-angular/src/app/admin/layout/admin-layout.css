@@ -1,0 +1,79 @@
+/* Wrapper para o logo atrás de todo o admin */
+.admin-layout-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+.admin-bg-logo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.admin-layout-wrapper .container-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+/* Área de conteúdo semi-transparente para o bg-logo aparecer atrás */
+.admin-main {
+  background: rgba(248, 249, 250, 0.92);
+}
+
+/* Ajustes do sidebar admin (Bootstrap já cobre o layout) */
+aside .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+aside .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  font-weight: 500;
+}
+
+aside a.text-secondary:hover {
+  color: #fff !important;
+}
+
+/* ========== Mobile: logo + Admin em cima, dropdown de cima pra baixo (empurra o conteúdo) ========== */
+.admin-mobile-top .nav-link:hover,
+.admin-mobile-dropdown .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-mobile-dropdown .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  font-weight: 500;
+}
+
+.admin-hamburger {
+  color: #fff;
+  background: transparent;
+}
+
+.admin-hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.admin-hamburger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #fff;
+}
+
+/* Dropdown: colapsa/expande; a tela de edição acompanha (fica sempre embaixo no fluxo) */
+.admin-mobile-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out;
+}
+
+.admin-mobile-dropdown.open {
+  max-height: 320px;
+  transition: max-height 0.35s ease-in;
+}

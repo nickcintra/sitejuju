@@ -1,4 +1,5 @@
 import { Component, input, computed } from '@angular/core';
+import { AdminUnlockDirective } from '../../directives/admin-unlock.directive';
 
 type Section = 'fotos' | 'videos' | 'design';
 type WordId = 'photo' | 'video' | 'design' | null;
@@ -12,6 +13,7 @@ interface CharBase {
 @Component({
   selector: 'app-circle-text',
   imports: [],
+  hostDirectives: [AdminUnlockDirective],
   templateUrl: './circle-text.html',
   styleUrl: './circle-text.css',
 })

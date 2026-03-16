@@ -24,4 +24,43 @@
 .rodape {
   height: 100px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 1.5rem;
+}
+
+.rodape-admin {
+  font-size: 0.85rem;
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.rodape-admin:hover {
+  color: #212529;
+  text-decoration: underline;
+}
+
+/* Aparece subindo (animação ao mostrar o link) */
+.rodape-admin-enter {
+  animation: rodape-admin-subir 0.4s ease-out forwards;
+}
+
+@keyframes rodape-admin-subir {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.dark-mode .rodape-admin {
+  color: #888;
+}
+
+body.dark-mode .rodape-admin:hover {
+  color: #e8e8e8;
 }
