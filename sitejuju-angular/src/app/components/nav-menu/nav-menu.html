@@ -1,52 +1,78 @@
-<div class="nav-menu-row d-flex align-items-center w-100 justify-content-end justify-content-lg-center py-4">
-  <button
-    class="navbar-toggler border-0 p-2"
-    type="button"
-    (click)="toggleMenu()"
-    [attr.aria-expanded]="menuOpen()"
-    aria-controls="navbarNav"
-    aria-label="Abrir menu"
-  >
-    <span class="hamburger-icon" aria-hidden="true">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </span>
-  </button>
-  <div
-    id="navbarNav"
-    class="collapse navbar-collapse flex-grow-0"
-    [class.show]="menuOpen()"
-  >
-  <ul class="navbar-nav mb-2 mb-lg-0 justify-content-center flex-column flex-lg-row text-center w-100">
-    <li class="nav-item border-0">
-      <a
-        class="nav-link fw-medium px-3 py-2"
-        routerLink="/"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Home</a
-      >
-    </li>
-    <li class="nav-item dropdown border-0">
-      <a
-        class="nav-link dropdown-toggle fw-medium px-3 py-2"
-        href="#"
-        role="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-        (click)="$event.preventDefault()"
-        >Portfolio</a
-      >
-      <ul class="dropdown-menu text-center">
-        <li><a class="dropdown-item py-2 px-3 text-dark text-decoration-none" routerLink="/portfolio/fotos">Fotos</a></li>
-        <li><a class="dropdown-item py-2 px-3 text-dark text-decoration-none" routerLink="/portfolio/videos">Vídeos</a></li>
-        <li><a class="dropdown-item py-2 px-3 text-dark text-decoration-none" routerLink="/portfolio/design">Design</a></li>
+<div class="d-flex flex-column w-100">
+  <!-- Linha 1: mobile = hamburger | logo | social. Desktop (lg) = só logo centralizado -->
+  <div class="row w-100 align-items-center flex-nowrap">
+    <div class="col-4 col-sm-4 col-md-4 d-lg-none"></div>
+    <div class="col-4 col-sm-4 col-md-4 col-lg-12 d-flex justify-content-center">
+      <a class="navbar-brand py-3" routerLink="/">
+        <img src="images/logo.png" alt="Logo" class="nav-menu-logo" />
+      </a>
+    </div>
+    <div class="col-4 col-sm-4 col-md-4 d-lg-none d-flex justify-content-end align-items-center gap-2">
+      <div class="nav-menu-row d-flex align-items-center justify-content-end py-4">
+        <button
+          class="navbar-toggler border-0 p-2"
+          type="button"
+          (click)="toggleMenu()"
+          [attr.aria-expanded]="menuOpen()"
+          aria-controls="navbarNav"
+          aria-label="Abrir menu"
+        >
+          <span class="hamburger-icon" aria-hidden="true">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
+        </button>
+        <div id="navbarNav" class="collapse navbar-collapse flex-grow-0" [class.show]="menuOpen()">
+          <ul class="navbar-nav mb-2 mb-lg-0 justify-content-center flex-column flex-lg-row text-center w-100">
+            <li class="nav-item border-0">
+              <a class="nav-link fw-medium px-3 py-2" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            </li>
+            <li class="nav-item dropdown border-0">
+              <a class="nav-link dropdown-toggle fw-medium px-3 py-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="$event.preventDefault()">Portfolio</a>
+              <ul class="dropdown-menu text-center">
+                <li><a class="dropdown-item py-2 px-3 text-dark text-decoration-none" routerLink="/portfolio/fotos">Fotos</a></li>
+                <li><a class="dropdown-item py-2 px-3 text-dark text-decoration-none" routerLink="/portfolio/videos">Vídeos</a></li>
+                <li><a class="dropdown-item py-2 px-3 text-dark text-decoration-none" routerLink="/portfolio/design">Design</a></li>
+              </ul>
+            </li>
+            <li class="nav-item border-0">
+              <a class="nav-link fw-medium px-3 py-2" routerLink="/sobre">Sobre</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-flex flex-column gap-2">
+        <a href="mailto:contato@site.com" aria-label="E-mail"><img src="images/o-email.png" alt="E-mail" class="nav-menu-social-icon" /></a>
+        <a href="#" aria-label="WhatsApp"><img src="images/whatsapp.png" alt="WhatsApp" class="nav-menu-social-icon" /></a>
+        <a href="#" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram" class="nav-menu-social-icon" /></a>
+      </div>
+    </div>
+  </div>
+  <!-- Linha 2: só a partir de lg — menu web + bolinhas (ícones) uma do lado da outra, separados -->
+  <div class="row w-100 align-items-center d-none d-lg-flex flex-nowrap">
+    <div class="col-6 col-lg-7 d-flex justify-content-center justify-content-lg-end pe-lg-4">
+      <ul class="navbar-nav flex-row mb-0 gap-2 gap-lg-3">
+        <li class="nav-item border-0">
+          <a class="nav-link fw-medium px-3 py-2" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </li>
+        <li class="nav-item dropdown border-0">
+          <a class="nav-link dropdown-toggle fw-medium px-3 py-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="$event.preventDefault()">Portfolio</a>
+          <ul class="dropdown-menu text-center">
+            <li><a class="dropdown-item py-2 px-3 text-dark text-decoration-none" routerLink="/portfolio/fotos">Fotos</a></li>
+            <li><a class="dropdown-item py-2 px-3 text-dark text-decoration-none" routerLink="/portfolio/videos">Vídeos</a></li>
+            <li><a class="dropdown-item py-2 px-3 text-dark text-decoration-none" routerLink="/portfolio/design">Design</a></li>
+          </ul>
+        </li>
+        <li class="nav-item border-0">
+          <a class="nav-link fw-medium px-3 py-2" routerLink="/sobre">Sobre</a>
+        </li>
       </ul>
-    </li>
-    <li class="nav-item border-0">
-      <a class="nav-link fw-medium px-3 py-2" routerLink="/sobre">Sobre</a>
-    </li>
-  </ul>
+    </div>
+    <div class="col-6 col-lg-5 d-flex justify-content-lg-start align-items-center gap-2">
+      <a href="mailto:contato@site.com" aria-label="E-mail"><img src="images/o-email.png" alt="E-mail" class="nav-menu-social-icon" /></a>
+      <a href="#" aria-label="WhatsApp"><img src="images/whatsapp.png" alt="WhatsApp" class="nav-menu-social-icon" /></a>
+      <a href="#" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram" class="nav-menu-social-icon" /></a>
+    </div>
   </div>
 </div>

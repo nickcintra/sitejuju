@@ -15,49 +15,82 @@
 
 /* ---------- Home: web = canto inferior direito, só a ponta de cima (Figma) ---------- */
 .bg-logo--home {
-  /* Coloca o topo da imagem perto do fundo do container para só a ponta aparecer no canto */
   background-position: 72vh 39vh;
   background-size: 134vh auto;
 }
 
+/* ---------- Portfolio: mobile = igual home (só ponta); web = maior, sobe pela direita ---------- */
+.bg-logo--portfolio {
+  background-position: 93vh 25vh;
+  background-size: 90vh auto;
+}
+
+/* ---------- Sobre: web = igual home (só ponta); mobile = mais atrás da foto do João ---------- */
+.bg-logo--sobre {
+  background-position: 67vh 97vh;
+  background-size: 134vh auto;
+}
+
+/* Ordem: do maior para o menor. Assim em tela pequena vence o media query mais estreito. */
+@media (max-width: 1024px) {
+  .bg-logo--portfolio {
+    background-position: 53vh 15vh;
+    background-size: 95vh auto;
+  }
+
+  .bg-logo--sobre {
+    background-position: 67vh 97vh;
+    background-size: 134vh auto;
+  }
+}
+
 @media (max-width: 991.98px) {
+  .bg-logo--portfolio {
+    background-size: 110vh auto;
+    background-position: -7vh 62vh;
+  }
+
   .bg-logo--home {
+    background-size: 110vh auto;
+    background-position: -7vh 62vh;
+  }
+
+  .bg-logo--sobre {
     background-size: 110vh auto;
     background-position: -7vh 62vh;
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 768px) {
   .bg-logo--home {
     background-size: 70vh auto;
     background-position: -10vh 75vh;
   }
-}
 
-/* ---------- Portfolio: mobile = igual home (só ponta); web = maior, sobe pela direita ---------- */
-.bg-logo--portfolio {
-  background-position: right bottom;
-  background-size: 280vw auto;
-}
-
-@media (min-width: 992px) {
   .bg-logo--portfolio {
-    background-position: right bottom;
-    /* Web: mais visível, sobe pela direita */
-    background-size: 140vh auto;
+    background-size: 110vh auto;
+    background-position: -7vh 62vh;
+  }
+
+  .bg-logo--sobre {
+    background-position: 30vh 26vh;
+    background-size: 83vh auto;
   }
 }
 
-/* ---------- Sobre: web = igual home (só ponta); mobile = mais atrás da foto do João ---------- */
-.bg-logo--sobre {
-  background-position: right bottom;
-  background-size: 220vh auto;
-}
+@media (max-width: 425px) {
+  .bg-logo--home {
+    background-size: 70vh auto;
+    background-position: -10vh 75vh;
+  }
 
-@media (max-width: 991.98px) {
+  .bg-logo--portfolio {
+    background-size: 110vh auto;
+    background-position: -7vh 62vh;
+  }
+
   .bg-logo--sobre {
-    /* Mobile: atrás do conteúdo, menor/mais contida para ficar atrás da foto */
-    background-position: left bottom;
-    background-size: 180vw auto;
+    background-size: 110vh auto;
+    background-position: -7vh 62vh;
   }
 }

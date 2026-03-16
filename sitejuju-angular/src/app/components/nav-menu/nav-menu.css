@@ -5,6 +5,18 @@
   width: 100%;
 }
 
+.nav-menu-logo {
+  width: 75px;
+  height: auto;
+}
+
+.nav-menu-social-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
 .nav-link {
   letter-spacing: 1px;
   color: #212529 !important;
@@ -12,13 +24,25 @@
 }
 
 .nav-link:hover {
-  color: #000 !important;
+  color: #6c757d !important;
 }
 
+/* Item ativo: sem fundo cinza, só texto (igual ao normal); hover só muda a cor da letra */
 .navbar-nav .nav-link.active {
-  background-color: #555;
-  color: #fff !important;
-  border-radius: 5px;
+  background-color: transparent !important;
+  color: #212529 !important;
+  border-radius: 0;
+}
+
+/* Mais espaço entre os itens do menu (desktop e mobile) */
+.navbar-nav.flex-row {
+  gap: 1rem;
+}
+
+@media (min-width: 992px) {
+  .navbar-nav.flex-row {
+    gap: 1.5rem;
+  }
 }
 
 .dropdown-item:hover {
@@ -99,6 +123,13 @@
 
 /* Mobile: painel overlay + deslize da esquerda para a direita + seta do dropdown */
 @media (max-width: 991.98px) {
+  :host {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .navbar-collapse {
     position: absolute;
     left: 0;

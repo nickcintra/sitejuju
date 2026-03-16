@@ -1,0 +1,4 @@
+/* Página inicial: host só envolve o quadrado do círculo; o alinhamento é na .conteudo (pai) */
+:host {
+  display: block;
+}

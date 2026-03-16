@@ -1,35 +1,7 @@
-/* Header: logo em cima, menu embaixo; ambos centralizados em todas as resoluções */
+/* Header: menu por cima do círculo (z-index) */
 
 :host {
   display: block;
-}
-
-.navbar {
-  /* padding-top: 15px;
-  padding-bottom: 15px; */
-}
-
-/* Coluna: logo em cima, menu embaixo; tudo centralizado */
-.navbar .container-fluid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.navbar-brand {
-  display: block;
-  padding: 15px 0;
-  text-align: center;
-}
-
-.header-logo {
-  width: 75px;
-  height: auto;
-}
-
-@media (max-width: 991.98px) {
-  .navbar {
-    position: relative;
-  }
+  position: relative;
+  z-index: 10;
 }
