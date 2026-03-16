@@ -1,1 +1,28 @@
-/* Apenas ajustes se precisar; grid e responsividade vêm do Bootstrap */
+/* Ordem de empilhamento: acima do bg-logo (0), abaixo do círculo (2) */
+:host {
+  position: relative;
+  z-index: 1;
+}
+
+/* Em telas grandes, container mais largo e imagens maiores (2 cols em lg, 3 em xl) */
+.portfolio-grid-container {
+  max-width: 100%;
+}
+
+@media (min-width: 992px) {
+  .portfolio-grid-container {
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .portfolio-grid-container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .portfolio-grid-container {
+    max-width: 2000px;
+  }
+}

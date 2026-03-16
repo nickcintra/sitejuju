@@ -1,3 +1,11 @@
 <div class="conteudoCirculo">
   <app-circle-text />
 </div>
+<button
+  type="button"
+  class="theme-toggle"
+  (click)="theme.toggle()"
+  [attr.aria-label]="theme.isDark() ? 'Ativar modo claro' : 'Ativar modo noturno'"
+>
+  {{ theme.isDark() ? 'Modo claro' : 'Modo noturno' }}
+</button>

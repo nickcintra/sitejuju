@@ -45,6 +45,17 @@
   }
 }
 
+/* Desktop grande (1920x1080+): letras um pouco maiores e mais espaço entre itens */
+@media (min-width: 1400px) {
+  .navbar-nav .nav-link {
+    font-size: 1.35rem;
+  }
+
+  .navbar-nav.flex-row {
+    gap: 2.25rem;
+  }
+}
+
 .dropdown-item:hover {
   background-color: #f8f9fa;
   color: #212529;

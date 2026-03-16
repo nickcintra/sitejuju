@@ -1,4 +1,11 @@
-/* Logo decorativo: absoluto ao wrapper para escalar com a página ao redimensionar (sem distorcer) */
+/* Host participa do empilhamento: z-index 0 (atrás do menu e do conteúdo), preenche o wrapper */
+:host {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+}
 
 .bg-logo {
   position: absolute;
@@ -6,10 +13,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   /* Caminho para public/images: bundler resolve e copia para o build (funciona em dev e GitHub Pages) */
-  background-image: url('../../../../public/images/logo.png');
   background-repeat: no-repeat;
 }
 
@@ -19,9 +25,9 @@
   background-size: 134vh auto;
 }
 
-/* ---------- Portfolio: mobile = igual home (só ponta); web = maior, sobe pela direita ---------- */
+/* ---------- Portfolio: centralizado com o grid (web); mobile = media queries abaixo ---------- */
 .bg-logo--portfolio {
-  background-position: 93vh 25vh;
+  background-position: center 25vh;
   background-size: 90vh auto;
 }
 
@@ -32,9 +38,27 @@
 }
 
 /* Ordem: do maior para o menor. Assim em tela pequena vence o media query mais estreito. */
+
+/* 1440px: portfolio alinhado ao grid (centralizado) */
+@media (min-width: 1440px) {
+  .bg-logo--portfolio {
+    background-position: center 25vh;
+    background-size: 90vh auto;
+  }
+}
+
+/* 1024px até 1439px: portfolio centralizado com o grid */
+@media (min-width: 1024px) and (max-width: 1439.98px) {
+  .bg-logo--portfolio {
+    background-position: center 25vh;
+    background-size: 95vh auto;
+  }
+}
+
+/* Até 1024px: portfolio centralizado */
 @media (max-width: 1024px) {
   .bg-logo--portfolio {
-    background-position: 53vh 15vh;
+    background-position: center 25vh;
     background-size: 95vh auto;
   }
 
@@ -50,9 +74,10 @@
     background-position: -7vh 62vh;
   }
 
+  /* Home mobile: mais à direita para sair de trás do botão modo claro */
   .bg-logo--home {
     background-size: 110vh auto;
-    background-position: -7vh 62vh;
+    background-position: 18vh 62vh;
   }
 
   .bg-logo--sobre {
@@ -64,7 +89,7 @@
 @media (max-width: 768px) {
   .bg-logo--home {
     background-size: 70vh auto;
-    background-position: -10vh 75vh;
+    background-position: 15vh 75vh;
   }
 
   .bg-logo--portfolio {
@@ -81,7 +106,7 @@
 @media (max-width: 425px) {
   .bg-logo--home {
     background-size: 70vh auto;
-    background-position: -10vh 75vh;
+    background-position: 12vh 75vh;
   }
 
   .bg-logo--portfolio {

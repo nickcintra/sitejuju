@@ -6,10 +6,32 @@ import { PortfolioGrid } from '../../components/portfolio-grid/portfolio-grid';
 
 type PortfolioSection = 'fotos' | 'videos' | 'design';
 
+/** Lista de imagens por seção. 6 por seção; repetindo as 3 existentes até você adicionar foto04–06, video04–06, design04–06. */
 const PORTFOLIO_IMAGES: Record<string, string[]> = {
-  fotos: ['images/foto01.svg', 'images/foto02.svg', 'images/foto03.svg'],
-  videos: ['images/video01.svg', 'images/video2.svg', 'images/video03.svg'],
-  design: ['images/design01.svg', 'images/design02.svg', 'images/design03.svg'],
+  fotos: [
+    'images/foto01.svg',
+    'images/foto02.svg',
+    'images/foto03.svg',
+    'images/foto01.svg',
+    'images/foto02.svg',
+    'images/foto03.svg',
+  ],
+  videos: [
+    'images/video01.svg',
+    'images/video2.svg',
+    'images/video03.svg',
+    'images/video01.svg',
+    'images/video2.svg',
+    'images/video03.svg',
+  ],
+  design: [
+    'images/design01.svg',
+    'images/design02.svg',
+    'images/design03.svg',
+    'images/design01.svg',
+    'images/design02.svg',
+    'images/design03.svg',
+  ],
 };
 
 function sectionFromUrl(url: string): PortfolioSection {

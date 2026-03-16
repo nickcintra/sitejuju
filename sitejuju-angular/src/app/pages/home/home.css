@@ -1,4 +1,23 @@
 /* Página inicial: host só envolve o quadrado do círculo; o alinhamento é na .conteudo (pai) */
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.theme-toggle {
+  font-family: consolas, monospace;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.theme-toggle:hover {
+  opacity: 0.85;
 }

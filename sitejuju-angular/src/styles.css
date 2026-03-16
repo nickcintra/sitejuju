@@ -28,9 +28,96 @@ body {
   top: 25px;
 }
 
+/* Portfolio (fotos, vídeos, design) e Sobre: círculo alinhado ao conteúdo */
+.app-wrapper.portfolioPage .conteudoCirculo,
+.app-wrapper.sobrePage .conteudoCirculo {
+  top: -138px;
+  left: -70px;
+}
+
 /* Mobile: círculo mais à esquerda (ajuste o valor para mais/menos) */
 @media (max-width: 991.98px) {
   .app-wrapper:not(.homePage) .conteudoCirculo {
     left: -170px;
   }
+
+  .app-wrapper.portfolioPage .conteudoCirculo,
+  .app-wrapper.sobrePage .conteudoCirculo {
+    top: -160px;
+    left: -170px;
+  }
+}
+
+/* ========== Modo noturno (classe .dark-mode no body, controlada pelo ThemeService) ========== */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #e8e8e8;
+}
+
+body.dark-mode .app-wrapper {
+  background-color: #1a1a1a;
+}
+
+/* Navbar sem fundo no modo noturno para não sobrepor o círculo e o logo de fundo */
+body.dark-mode .navbar,
+body.dark-mode .navbar-collapse {
+  background-color: transparent !important;
+}
+
+/* Barra do menu: fundo noturno só no mobile; desktop sem background */
+body.dark-mode .navbar-nav {
+  border-radius: 8px;
+  padding: 0.25rem 0.5rem;
+}
+
+@media (max-width: 991.98px) {
+  body.dark-mode .navbar-nav {
+    background-color: #1a1a1a;
+  }
+}
+
+@media (min-width: 992px) {
+  body.dark-mode .navbar-nav {
+    background-color: transparent;
+  }
+}
+
+body.dark-mode .nav-link,
+body.dark-mode .navbar-nav .nav-link.active {
+  color: #e8e8e8 !important;
+}
+
+body.dark-mode .nav-link:hover {
+  color: #b0b0b0 !important;
+}
+
+body.dark-mode .dropdown-menu {
+  background-color: #2d2d2d !important;
+  border-color: #404040;
+}
+
+body.dark-mode .dropdown-item {
+  color: #e8e8e8 !important;
+}
+
+body.dark-mode .dropdown-item:hover {
+  background-color: #404040 !important;
+  color: #fff !important;
+}
+
+body.dark-mode .hamburger-line {
+  background-color: #e8e8e8 !important;
+}
+
+body.dark-mode .circle-arc-line {
+  stroke: #e8e8e8;
+}
+
+body.dark-mode .navbar-brand img,
+body.dark-mode .nav-menu-social-icon {
+  filter: invert(1);
+}
+
+body.dark-mode .rodape {
+  background-color: #1a1a1a;
 }

@@ -3,5 +3,7 @@
   [class.bg-logo--home]="page() === 'home'"
   [class.bg-logo--portfolio]="page() === 'portfolio'"
   [class.bg-logo--sobre]="page() === 'sobre'"
+  [class.bg-logo--dark]="theme.isDark()"
+  [style.backgroundImage]="'url(' + logoUrl() + ')'"
   aria-hidden="true"
 ></div>
